@@ -64,6 +64,9 @@ def note_name(number, scale):
 
 
 def chord_scaled(arr, scale, period=12):
+    '''
+    Scales an note's array
+    '''
     remainder = arr.size % period
     if remainder:
         fill = period - remainder
@@ -76,6 +79,9 @@ def chord_scaled(arr, scale, period=12):
 
 
 def get_music(series, period=12, key='C', mode='major', octaves=2):
+    '''
+    Return a music generated from an inserted series.
+    '''
     midi_out = StringIO()
 
     if all(np.isnan(series)):
