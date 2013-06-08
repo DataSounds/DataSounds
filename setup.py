@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.md')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-version = '1.0'
+version = '1.1'
 
 install_requires = [
     'sebastian',
@@ -21,17 +21,15 @@ setup(name='DataSounds',
     classifiers=[
       # Get strings from http://pypi.python.org/pypi?%3Aaction=list_classifiers
     ],
-    keywords='Sonification, Music, Time series, ',
+    keywords='Sonification Music Timeseries ',
     author='Arnaldo Russo, Luiz Irber',
-    author_email='arnaldorusso@gmail.com, luiz.ierber@gmail.com',
+    author_email='arnaldo@datasounds.org, luiz@datasounds.org',
     url='https://github.com/DataSounds/DataSounds',
     license='PSF',
-    packages=find_packages('DataSounds'),
-    package_dir = {'': 'DataSounds'},include_package_data=True,
+    packages=find_packages('src'),
+    package_dir = {'': 'src'},
+    include_package_data=True,
     zip_safe=False,
     install_requires=install_requires,
-    entry_points={
-        'console_scripts':
-            ['DataSounds = datasounds.get_music']
-    }
+    platforms='any',
 )
