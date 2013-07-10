@@ -122,7 +122,7 @@ def get_music(series, key='C', mode='major', octaves=2, instruments=None, period
         As higher are the octaves higher pitch differeneces will occur
         while representing your data.
     
-    instruments : array of MIDI instruments.
+    instruments : list of MIDI instruments.
         General MIDI Level 1 Instrument Patch Map can be found at: 
         http://en.wikipedia.org/wiki/General_MIDI
         Gran Piano is the default usage value '[0]' if any instruments
@@ -140,6 +140,15 @@ def get_music(series, key='C', mode='major', octaves=2, instruments=None, period
     -------
     midi_out : StringIO object.
         It can be written on a file or used by your way.
+    
+    Example
+    -------
+    >>> serie = np.random.random(10).reshape(2,5)
+    array([[ 0.13536875,  0.42212475,  0.26360219,  0.30153336,  0.62150923],
+       [ 0.49384405,  0.32503762,  0.85549822,  0.80212442,  0.70702405]])
+
+    >>> get_music(serie, octaves=2, instruments=(0,23))
+    <StringIO.StringIO instance at 0x7f98201c9d40>    
     
     '''
     midi_out = StringIO()
