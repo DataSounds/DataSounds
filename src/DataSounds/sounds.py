@@ -104,26 +104,72 @@ def chord_scaled(arr, scale, period=12):
     #return chords
 
 
-def get_music(series, period=12, key='C', mode='major', octaves=2):
+def get_music(series, key='C', mode='major', octaves=2, instruments=None, period=12):
     '''
     Return a music generated from an inserted series.
+    
+    Parameters
+    ----------
+    series : an array that could be an 2d-array.
+    
+    key : Musical key. 
+        Can be setted as a parameter while building scale.
+    
+    mode: Musica mode.
+        'major' and 'minor' and 'pentatonic' are accetable parameters.
+        
+    octaves : Number of available scales for musical construction.
+        As higher are the octaves higher pitch differeneces will occur
+        while representing your data.
+    
+    instruments : array of MIDI instruments.
+        General MIDI Level 1 Instrument Patch Map can be found at: 
+        http://en.wikipedia.org/wiki/General_MIDI
+        Gran Piano is the default usage value '[0]' if any instruments
+        are declared.
+        Fewer examples:
+        [0] Acoustic Grand Piano
+        [18] Rock Organ
+        [23] Tango Accordion
+        [32] Acoustic Bass
+        [73] Flute
+        
+    period : parameter of chord_scaled function
+    
+    Returns
+    -------
+    midi_out : StringIO object.
+        It can be written on a file or used by your way.
+    
     '''
     midi_out = StringIO()
 
-    if all(np.isnan(series)):
-        s = SMF([])
-        s.write(midi_out)
-    else:
-        scale = build_scale(key, mode, octaves)
-
-        notes = note_number(series, scale)
-        melody = parse(' '.join([note_name(x, scale) for x in notes]))
-
+    series = np.array(series)
+    scale = build_scale(key, mode, octaves)
+    melodies = []
+    for i in range(series.shape[0]):
+        if all(np.isnan(series[i])):
+            melody = []
+            melodies.append(melody)
+        else:
+            notes = note_number(series[i], scale)
+            melody = parse(' '.join([note_name(x, scale) for x in notes]))
+            melodies.append(melody)
+        
         #chords = chord_scaled(series, scale, period)
-
         # Transform it to a MIDI file with chords.
         #s = SMF([melody, chords], instruments=[0, 23])
-        s = SMF([melody])
-        s.write(midi_out)
-
+    melodies = np.array(melodies)    
+    if instruments == None:
+        s = SMF(melodies)
+    
+    else:
+        vals = []
+        for v in instruments:
+            vals.append(v)
+        #print(vals)
+        s = SMF(melodies, vals)
+    
+    s.write(midi_out)
+    
     return midi_out
