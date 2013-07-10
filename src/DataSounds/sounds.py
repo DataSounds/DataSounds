@@ -164,11 +164,7 @@ def get_music(series, key='C', mode='major', octaves=2, instruments=None, period
         s = SMF(melodies)
     
     else:
-        vals = []
-        for v in instruments:
-            vals.append(v)
-        #print(vals)
-        s = SMF(melodies, vals)
+        s = SMF(melodies, instruments)
     
     s.write(midi_out)
     
