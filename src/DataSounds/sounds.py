@@ -114,6 +114,7 @@ def get_music(series, key='C', mode='major', octaves=2, instruments=None, period
     
     key : Musical key. 
         Can be setted as a parameter while building scale.
+	Key should be written as "c", for C and "cis" for C sharp.
     
     mode: Musica mode.
         'major' and 'minor' and 'pentatonic' are accetable parameters.
