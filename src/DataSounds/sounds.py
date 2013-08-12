@@ -56,8 +56,8 @@ def build_scale(base_note, mode='major', octaves=1):
     notes = [n + ("'" * octave)
              for octave in range(octaves)
              for n in "c cis d dis e f fis g gis a ais b".split()]
-    scale_names = np.roll(notes,
-                          notes.index(base_note.lower().replace('#', 'is')))
+    new_root = notes.index(base_note.lower().replace('#', 'is'))
+    scale_names = np.roll(notes, -new_root)
     scale_notes = [scale_names[s] for s in intervals]
     return scale_notes
 
