@@ -18,9 +18,9 @@ def note_classes(arr, scale):
     '''
     Get note classes from data range.
     '''
-    a = np.nanmin(arr)
-    b = np.nanmax(arr)
-    count, bins = np.histogram(arr, bins=len(scale) - 1, range=(a, b))
+    minr = np.nanmin(arr)
+    maxr = np.nanmax(arr)
+    _, bins = np.histogram(arr, bins=len(scale) - 1, range=(minr, maxr))
     return bins
 
 
@@ -34,12 +34,12 @@ def note_number(arr, scale):
     return mapping
 
 
-def note_on_classes(n, arr, scale):
-    if np.isnan(n):
+def note_on_classes(note, arr, scale):
+    if np.isnan(note):
         return np.nan
 
     x_notes = note_classes(arr, scale)
-    return np.searchsorted(x_notes, n, side='left').astype('f8')
+    return np.searchsorted(x_notes, note, side='left').astype('f8')
 
 
 def build_scale(base_note, mode='major', octaves=1):
@@ -92,10 +92,10 @@ def chord_scaled(arr, scale, period=12):
     root = []
     third = []
     fifth = []
-    for n in root_scaled:
-        root.append(note_name(n, scale))
-        third.append(note_name(n, scale))
-        fifth.append(note_name(n, scale))
+    for note in root_scaled:
+        root.append(note_name(note, scale))
+        third.append(note_name(note, scale))
+        fifth.append(note_name(note, scale))
 
     seq1 = parse(" ".join(root))
     seq2 = parse(" ".join(third))
