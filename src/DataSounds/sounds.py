@@ -1,7 +1,11 @@
 #/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from StringIO import StringIO
+try:
+    from StringIO import StringIO
+except ImportError:
+    from io import StringIO
+
 
 import numpy as np
 
