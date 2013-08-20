@@ -12,6 +12,7 @@ import numpy as np
 from sebastian.lilypond.interp import parse
 from sebastian.midi.write_midi import SMF
 from sebastian.core.transforms import stretch
+from sebastian.core import notes
 
 
 def note_classes(arr, scale):
@@ -42,27 +43,24 @@ def note_on_classes(note, arr, scale):
     return np.searchsorted(x_notes, note, side='left').astype('f8')
 
 
-def build_scale(base_note, mode='major', octaves=1):
+def pentatonic_scale(tonic):
+    return [tonic + i for i in [0, 2, 4, 1, 3]]
+
+
+def build_scale(key, mode='major', octaves=1):
     '''
     Build a scale from a refference note.
     '''
     if mode == 'major':
-        intervals = [0, 2, 4, 5, 7, 9, 11]
+        scale = notes.major_scale
     elif mode == 'minor':
-        intervals = [0, 2, 3, 5, 7, 8, 10]
+        scale = notes.minor_scale
     elif mode == 'pentatonic':
-        intervals = [0, 2, 4, 7, 9]
+        scale = pentatonic_scale
 
-    intervals = [n + (12 * octave)
-                 for octave in range(octaves)
-                 for n in intervals]
-
-    notes = [n + ("'" * octave)
-             for octave in range(octaves)
-             for n in "c cis d dis e f fis g gis a ais b".split()]
-    new_root = notes.index(base_note.lower().replace('#', 'is'))
-    scale_names = np.roll(notes, -new_root)
-    scale_notes = [scale_names[s] for s in intervals]
+    scale_notes = [notes.name(s).lower() + ("'" * octave)
+                   for octave in range(octaves)
+                   for s in scale(notes.value(key))]
     return scale_notes
 
 
