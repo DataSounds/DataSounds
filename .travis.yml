@@ -1,14 +1,21 @@
 language: python
 python:
-  - "2.6"
-  - "2.7"
-  - "3.2"
-  - "3.3"
+- '2.6'
+- '2.7'
+- '3.2'
+- '3.3'
 install:
-  - "pip install -r dev-requirements.txt --use-mirrors"
-  - "pip install coverage"
-  - "pip install coveralls"
+- pip install -r dev-requirements.txt --use-mirrors
+- pip install coverage
+- pip install coveralls
 script:
-  - "python setup.py test"
-after_success:
-  coveralls
+- python setup.py test
+after_success: coveralls
+deploy:
+  provider: pypi
+  user: luizirber
+  password:
+    secure: etFmy6JEQdR9T5uJbOVpdnP754Qbk4j0s0vjkSOCs9JfynZr3XwSTDI405a2pSCx0JMRx5xG4gVdpj4uFeXUXW7qU7NODFfmtkwDM6Q66eK0fPqlP5RcWauVzu5XsFmo5keLzn2As/7Hz7aUiBlTbYRtPk0vrra9nn8ozmUtWeI=
+  on:
+    tags: true
+    repo: DataSounds/DataSounds
