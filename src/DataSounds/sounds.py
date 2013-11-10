@@ -2,9 +2,9 @@
 # -*- coding: utf-8 -*-
 
 try:
-    from StringIO import StringIO
+    from io import BytesIO
 except ImportError:
-    from io import StringIO
+    from StringIO import StringIO as BytesIO
 
 
 import numpy as np
@@ -208,7 +208,7 @@ def get_music(series, key='C', mode='major', octaves=2,
 
     Returns
     -------
-    midi_out : StringIO object.
+    midi_out : BytesIO object.
         It can be written on a file or used by your way.
 
     Example
@@ -218,10 +218,10 @@ def get_music(series, key='C', mode='major', octaves=2,
        [ 0.49384405,  0.32503762,  0.85549822,  0.80212442,  0.70702405]])
 
     >>> get_music(serie, octaves=2, instruments=(0,23))
-    <StringIO.StringIO instance at 0x7f98201c9d40>
+    <io.BytesIO instance at 0x7f98201c9d40>
 
     '''
-    midi_out = StringIO()
+    midi_out = BytesIO()
 
     series = np.array(series)
     scale = build_scale(key, mode, octaves)
