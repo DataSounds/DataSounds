@@ -134,7 +134,7 @@ def note_name(number, scale):
     if np.isnan(number):
         return "r"
     else:
-        return scale[int(number)]
+        return scale[int(number)].replace('#', 'is')
 
 
 def chord_scaled(arr, scale, period=12):

@@ -8,17 +8,22 @@ from DataSounds.sounds import build_scale, note_number, note_name
 
 def test_build_scale_major():
     scale = build_scale('C', 'major', 1)
-    assert any('is' in note for note in scale) is False
+    assert scale == 'c d e f g a b'.split()
 
 
 def test_build_scale_minor():
     scale = build_scale('A', 'minor', 1)
-    assert any('is' in note for note in scale) is False
+    assert scale == 'a b c d e f g'.split()
 
 
 def test_build_scale_pentatonic():
     scale = build_scale('C', 'pentatonic', 1)
     assert scale == ['c', 'd', 'e', 'g', 'a']
+
+
+def test_build_scale_pentatonic_two_octaves():
+    scale = build_scale('D', 'pentatonic', 2)
+    assert scale == ['d', 'e', 'f#', 'a', 'b', "d'", "e'", "f#'", "a'", "b'"]
 
 
 def test_note_number():
