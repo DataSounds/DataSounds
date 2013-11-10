@@ -79,10 +79,11 @@ def pentatonic_scale(tonic):
     '''
     return [tonic + i for i in [0, 2, 4, 1, 3]]
 
+
 def blues_scale(tonic):
     '''
     Blues scale
-    
+
     References
     ----------
     http://en.wikipedia.org/wiki/Blues_scale
@@ -237,7 +238,6 @@ def get_music(series, key='C', mode='major', octaves=2,
         # chords = chord_scaled(series, scale, period)
         # Transform it to a MIDI file with chords.
         # s = SMF([melody, chords], instruments=[0, 23])
-    melodies = np.array(melodies)
     if instruments is None:
         s = SMF(melodies)
     else:
