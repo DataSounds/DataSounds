@@ -3,7 +3,7 @@
 import numpy as np
 
 
-from DataSounds.sounds import build_scale, note_number, note_name
+from DataSounds.sounds import build_scale, note_number, note_name, get_music
 
 
 def test_build_scale_major():
@@ -35,3 +35,11 @@ def test_build_note_name():
     scale = build_scale('C', 'major', 1)
     notes = note_number([1, 2, 3, 4, np.nan], scale)
     assert [note_name(x, scale) for x in notes] == ['c', 'e', 'g', 'b', 'r']
+
+
+def test_get_music():
+    series = np.random.rand(24).reshape(2, 12)
+    m = get_music(series, key='D', mode='pentatonic',
+                  octaves=2, instruments=[0, 23])
+    # TODO: how to test this? m is a StringIO containing a MIDI file.
+    # Load the MIDI file and check what was generated?
