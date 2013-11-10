@@ -18,6 +18,17 @@ from sebastian.core import notes
 def note_classes(arr, scale):
     '''
     Get note classes from data range.
+
+    Parameters
+    ----------
+    arr : arr
+        array to be arranged as note classes.
+    scale : an `build_scale` object
+        Consists of a Tone scaled. (C maj, pentatonic C, C min, etc.)
+
+    Returns
+    -------
+    Parametreized values of musical notes based on input array.
     '''
     minr = np.nanmin(arr)
     maxr = np.nanmax(arr)
@@ -28,6 +39,20 @@ def note_classes(arr, scale):
 def note_number(arr, scale):
     '''
     Get a relative number of notes, included in a choiced scale.
+
+    Parameters
+    ----------
+    arr : arr
+        array to be arranged as note classes.
+    scale : an `build_scale` object
+
+    Returns
+    -------
+    mapping : arr
+        Note number of input array parameterized with choiced scale.
+        Note number follows the Sebastian sequence, and it can be
+        visualized for any number with:
+        sebastian.core.notes.name('2') will return musical note "E".
     '''
     x_notes = note_classes(arr, scale)
     mapping = np.searchsorted(x_notes, arr, side='left').astype('f8')
@@ -44,12 +69,48 @@ def note_on_classes(note, arr, scale):
 
 
 def pentatonic_scale(tonic):
+    '''
+    Pentatonic scale, based on Major Pentatonic.
+    Not implemented on Sebastian.
+
+    References
+    ----------
+    http://en.wikipedia.org/wiki/Pentatonic_scale
+    '''
     return [tonic + i for i in [0, 2, 4, 1, 3]]
+
+def blues_scale(tonic):
+    '''
+    Blues scale
+    
+    References
+    ----------
+    http://en.wikipedia.org/wiki/Blues_scale
+    '''
+    return [tonic + i for i in [0, 2, 4, -1, 1, 3, 5]]
 
 
 def build_scale(key, mode='major', octaves=1):
     '''
     Build a scale from a refference note.
+
+    Parameters
+    ----------
+    key : Musical key.
+        Can be setted as a parameter while building scale.
+        Key should be written as "C", for C and "C#" for C sharp and
+        "Cb" for C flat.
+
+    mode : Musica mode.
+        'major' and 'minor' and 'pentatonic' are accetable parameters.
+
+    octaves : int
+        number of octaves to be evaluated.
+
+    Returns
+    -------
+    scale_notes : sebastian.core.elements
+        Sequence of scale notes.
     '''
     if mode == 'major':
         scale = notes.major_scale
@@ -57,6 +118,8 @@ def build_scale(key, mode='major', octaves=1):
         scale = notes.minor_scale
     elif mode == 'pentatonic':
         scale = pentatonic_scale
+    elif mode == 'blues':
+        scale = blues_scale
 
     scale_notes = [notes.name(s).lower() + ("'" * octave)
                    for octave in range(octaves)
@@ -117,9 +180,10 @@ def get_music(series, key='C', mode='major', octaves=2,
 
     key : Musical key.
         Can be setted as a parameter while building scale.
-        Key should be written as "c", for C and "cis" for C sharp.
+        Key should be written as "C", for C and "C#" for C sharp and
+        "Cb" for C flat.
 
-    mode: Musica mode.
+    mode : Musica mode.
         'major' and 'minor' and 'pentatonic' are accetable parameters.
 
     octaves : Number of available scales for musical construction.
@@ -138,7 +202,8 @@ def get_music(series, key='C', mode='major', octaves=2,
         [32] Acoustic Bass
         [73] Flute
 
-    period : parameter of chord_scaled function
+    period : int
+        parameter of chord_scaled function.
 
     Returns
     -------
