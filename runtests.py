@@ -2,4 +2,6 @@
 
 import pytest
 
-pytest.main("--cov src/DataSounds --cov-report xml --cov-report term-missing --junitxml=tests.xml")
+
+errno = pytest.main("--cov src/DataSounds --cov-report xml --cov-report term-missing --junitxml=tests.xml")
+raise SystemExit(errno)
