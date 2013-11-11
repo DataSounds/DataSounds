@@ -173,7 +173,7 @@ def chord_scaled(arr, scale, period=12):
 def get_music(series, key='C', mode='major', octaves=2,
               instruments=None, period=12):
     '''
-    Return a music generated from an inserted series.
+    Returns music generated from an inserted series.
 
     Parameters
     ----------
@@ -184,8 +184,9 @@ def get_music(series, key='C', mode='major', octaves=2,
         Key should be written as "C", for C and "C#" for C sharp and
         "Cb" for C flat.
 
-    mode : Musica mode.
-        'major' and 'minor' and 'pentatonic' are accetable parameters.
+    mode : Music mode.
+        'major', 'minor' and 'pentatonic' are accetable parameters.
+        More options of modes on `build_scale`.
 
     octaves : Number of available scales for musical construction.
         As higher are the octaves higher pitch differeneces will occur
