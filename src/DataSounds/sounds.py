@@ -232,8 +232,8 @@ def get_music(series, key='C', mode='major', octaves=2,
             melody = []
             melodies.append(melody)
         else:
-            notes = note_number(series[i], scale)
-            melody = parse(' '.join([note_name(x, scale) for x in notes]))
+            snotes = note_number(series[i], scale)
+            melody = parse(' '.join([note_name(x, scale) for x in snotes]))
             melodies.append(melody)
 
         # chords = chord_scaled(series, scale, period)
