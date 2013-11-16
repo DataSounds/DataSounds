@@ -227,18 +227,27 @@ def get_music(series, key='C', mode='major', octaves=2,
     series = np.array(series)
     scale = build_scale(key, mode, octaves)
     melodies = []
-    for i in range(series.shape[0]):
-        if all(np.isnan(series[i])):
+    if len(series.shape) == 1:
+        if all(np.isnan(series)):
             melody = []
             melodies.append(melody)
         else:
-            snotes = note_number(series[i], scale)
+            snotes = note_number(series, scale)
             melody = parse(' '.join([note_name(x, scale) for x in snotes]))
             melodies.append(melody)
-
-        # chords = chord_scaled(series, scale, period)
-        # Transform it to a MIDI file with chords.
-        # s = SMF([melody, chords], instruments=[0, 23])
+    else:
+        for i in range(series.shape[0]):
+            if all(np.isnan(series[i])):
+                melody = []
+                melodies.append(melody)
+            else:
+                snotes = note_number(series[i], scale)
+                melody = parse(' '.join([note_name(x, scale) for x in snotes]))
+                melodies.append(melody)
+        
+            # chords = chord_scaled(series, scale, period)
+            # Transform it to a MIDI file with chords.
+            # s = SMF([melody, chords], instruments=[0, 23])
     if instruments is None:
         s = SMF(melodies)
     else:
