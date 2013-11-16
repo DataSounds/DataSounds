@@ -38,8 +38,9 @@ def test_build_note_name():
 
 
 def test_get_music():
-    series = np.random.rand(24).reshape(2, 12)
-    m = get_music(series, key='D', mode='pentatonic',
+    series = [np.random.rand(24).reshape(2, 12), np.random.rand(24)]
+    for item in series:
+        m = get_music(item, key='D', mode='pentatonic',
                   octaves=2, instruments=[0, 23])
     # TODO: how to test this? m is a StringIO containing a MIDI file.
     # Load the MIDI file and check what was generated?
