@@ -255,3 +255,18 @@ def get_music(series, key='C', mode='major', octaves=2,
 
     s.write(midi_out)
     return midi_out
+
+def w2Midi(name, BytesIo):
+    '''
+    Writes the output of `get_music` inside a '.midi' file on disk.
+
+    Parameters
+    ----------
+    name : str
+        name of file
+    BytesIo : get_music output variable
+        varible of music generated with `get_music`
+    '''
+    Muz_file = open(str(name)+'.midi', 'w')
+    Muz_file.write(BytesIo.getvalue())
+    Muz_file.close()
