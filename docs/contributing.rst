@@ -36,8 +36,8 @@ is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-imSound could always use more documentation, whether as part of the 
-official imSound docs, in docstrings, or even on the web in blog posts,
+DataSounds could always use more documentation, whether as part of the 
+official DataSounds docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
