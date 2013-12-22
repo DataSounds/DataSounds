@@ -6,6 +6,20 @@
 News
 ====
 
+1.2.0
+*Release date: 22-Dec-2013*
+
+* Tests ans some beta features
+
+
+1.1.0
+-----
+
+*Release date: 08-Jun-2013*
+
+*First stable release
+
+
 0.2a1
 -----
 
