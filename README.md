@@ -4,3 +4,5 @@ DataSounds
 ==========
 
 Get sounds from temporal series, or another sequecial data.
+
+[Documentation](https://datasounds.readthedocs.org/)
