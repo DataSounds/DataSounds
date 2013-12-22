@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.md')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-version = '1.1.0'
+version = '1.2.0'
 
 install_requires = [
     'sebastian',
