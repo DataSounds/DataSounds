@@ -76,7 +76,7 @@ Ready to contribute? Here's how to set up `DataSounds` for local development.
 
 5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
 
-    $ flake8 imSound tests
+    $ flake8 DataSounds tests
     $ python setup.py test
     $ tox
 
