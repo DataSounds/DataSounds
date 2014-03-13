@@ -48,7 +48,7 @@ def note_number(arr, scale):
 
     Returns
     -------
-    mapping : arr
+    mapping : list
         Note number of input array parameterized with choiced scale.
         Note number follows the Sebastian sequence, and it can be
         visualized for any number with:
@@ -56,7 +56,11 @@ def note_number(arr, scale):
     '''
     x_notes = note_classes(arr, scale)
     mapping = np.searchsorted(x_notes, arr, side='left').astype('f8')
-    mapping[np.isnan(arr)] = np.nan
+    mapping = np.int32(mapping).tolist()
+    rests = np.where(np.isnan(arr))[0]
+    for i in rests:
+        mapping[i] = np.nan
+        
     return mapping
 
 
