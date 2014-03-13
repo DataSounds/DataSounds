@@ -28,13 +28,13 @@ def test_build_scale_pentatonic_two_octaves():
 
 def test_note_number():
     scale = build_scale('C', 'major', 1)
-    assert all(note_number([1, 2, 3, 4], scale) == [0, 2, 4, 6])
+    assert all(np.array(note_number([1, 2, 3, 4], scale)) == [0, 2, 4, 6])
 
 
 def test_build_note_name():
     scale = build_scale('C', 'major', 1)
     notes = note_number([1, 2, 3, 4, np.nan], scale)
-    assert [note_name(x, scale) for x in notes] == ['c', 'e', 'g', 'b', 'r']
+    assert [np.array(note_name(x, scale)) for x in notes] == ['c', 'e', 'g', 'b', 'r']
 
 
 def test_get_music():
