@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.md')).read()
 NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 
 
-version = '1.2.0'
+version = '1.2.1'
 
 install_requires = [
     'sebastian',
@@ -41,7 +41,7 @@ setup(name='DataSounds',
       author='Arnaldo Russo, Luiz Irber',
       author_email='arnaldo@datasounds.org, luiz@datasounds.org',
       url='http://www.datasounds.org',
-      license='PSF',
+      license='BSD License',
       packages=find_packages('src'),
       package_dir={'': 'src'},
       include_package_data=True,
