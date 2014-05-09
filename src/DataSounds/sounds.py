@@ -219,7 +219,7 @@ def get_music(series, key='C', mode='major', octaves=2,
        [ 0.49384405,  0.32503762,  0.85549822,  0.80212442,  0.70702405]])
 
     >>> get_music(data, octaves=2, instruments=(0,23))
-    <io.BytesIO instance at 0x7f98201c9d40>
+    <io.BytesIO at 0x7f98201c9d40>
 
     '''
     midi_out = BytesIO()
