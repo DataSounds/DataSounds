@@ -16,7 +16,11 @@ Or using pip
 
     $ pip install DataSounds
 
-Or, if you have virtualenvwrapper installed:
+Or, with the controled python ecosystem virtualenvwrapper_.
+
+After install virtualenvwrapper, follow the instructions below:
+
+.. _virtualenv: https://virtualenvwrapper.readthedocs.org/en/latest/#
 
 .. code-block:: bash
 
@@ -26,8 +30,6 @@ Or, if you have virtualenvwrapper installed:
     (DataSounds) $ cd DataSounds
     (DataSounds) $ python setup.py install
 
-If in doubts while using virtualenvwrapper take a look `here.
-<http://virtualenvwrapper.readthedocs.org/en/latest/>`_.
 
 Dependencies
 ************
@@ -36,5 +38,5 @@ Dependencies
 use `DataSounds. <datasouds.org>`_
 
 Both of them can be installed using **pip**. If you use virtualenvwrapper this
-could be done inside your virtual environment.
+could be done inside your virtual environment and should be already installed if DataSounds was compiled with success.
 
