@@ -20,7 +20,7 @@ Or, with the controled python ecosystem virtualenvwrapper_.
 
 After install virtualenvwrapper, follow the instructions below:
 
-.. _virtualenv: https://virtualenvwrapper.readthedocs.org/en/latest/#
+.. _virtualenvwrapper: https://virtualenvwrapper.readthedocs.org/en/latest/#
 
 .. code-block:: bash
 
