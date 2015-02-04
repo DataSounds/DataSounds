@@ -4,7 +4,7 @@ import os
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.rst')).read()
 
-version = '1.2.3'
+version = '1.2.4'
 
 install_requires = [
 #    'sebastian',
