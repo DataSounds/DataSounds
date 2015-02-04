@@ -1,7 +1,7 @@
-from sebastian.core import MIDI_PITCH, OFFSET_64, DURATION_64
-from sebastian.core import Point, OSequence
+from . import MIDI_PITCH, OFFSET_64, DURATION_64
+from . import Point, OSequence
 
-from sebastian.core.notes import modifiers, letter
+from .notes import modifiers, letter
 from functools import wraps, partial
 
 

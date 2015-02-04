@@ -5,7 +5,7 @@ import sys
 import tempfile
 import subprocess
 
-from sebastian.midi import write_midi
+from ..midi import write_midi
 
 OPEN = "open"
 TIMIDITY = "timidity"

@@ -3,7 +3,7 @@
 from io import BytesIO
 import six
 
-from sebastian.core import OFFSET_64, MIDI_PITCH, DURATION_64
+from ..core import OFFSET_64, MIDI_PITCH, DURATION_64
 
 
 def write_chars(out, chars):

@@ -8,7 +8,7 @@ try:
 except ImportError:
     ipython = False
 
-from sebastian.lilypond import write_lilypond
+from ..lilypond import write_lilypond
 
 
 class UnificationError(Exception):
@@ -88,7 +88,7 @@ class SeqBase(object):
 
         :param format: "png" or "svg"
         """
-        from sebastian.core.transforms import lilypond
+        from .core.transforms import lilypond
         seq = HSeq(self) | lilypond()
 
         lily_output = write_lilypond.lily_format(seq)
@@ -252,7 +252,7 @@ class HSeq(SeqBase):
         ending at end_offset (None representing the end, whih is the default)
         Raises ValueError if duration_64 is missing on any element
         """
-        from sebastian.core import DURATION_64
+        from .core import DURATION_64
 
         def subseq_iter(start_offset, end_offset):
             cur_offset = 0

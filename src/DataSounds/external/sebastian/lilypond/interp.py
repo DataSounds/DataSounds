@@ -1,5 +1,5 @@
-from sebastian import logger
-from sebastian.core import OSequence, Point, OFFSET_64, MIDI_PITCH, DURATION_64
+from .. import logger
+from ..core import OSequence, Point, OFFSET_64, MIDI_PITCH, DURATION_64
 
 import re
 
