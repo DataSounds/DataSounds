@@ -5,3 +5,5 @@ setuptools==0.9
 wheel==0.21
 pytest-cov==1.6
 pylint==1.0.0
+check-manifest==0.22
+bumpversion==0.5.1

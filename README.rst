@@ -1,3 +1,6 @@
+DataSounds
+==========
+
 .. image:: https://badge.waffle.io/datasounds/datasounds.png
         :target: http://waffle.io/datasounds/datasounds
 
@@ -8,13 +11,22 @@
         :target: https://coveralls.io/r/DataSounds/DataSounds?branch=master
 
 
-`DataSounds <http://www.datasounds.org>`_
-=========================================
-Get sounds from temporal series, or another sequecial data. Access www.datasounds.org
+Get sounds from temporal series, or another sequential data.
+Check www.datasounds.org for more information.
+
+Installation
+============
+
+DataSounds is available on PyPI and can be installed with pip:
+
+``pip install DataSounds``
 
 Documentation
 =============
-Follow the documentation (https://datasounds.readthedocs.org/)
+
+Available at
+
+https://datasounds.readthedocs.org/
 
 License
 =======

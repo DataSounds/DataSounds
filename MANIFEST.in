@@ -1,3 +1,7 @@
 include README.md
 include NEWS.txt
-recursive-include src /*
+recursive-include src *.py
+recursive-include src/DataSounds/external README
+recursive-include src/DataSounds/external LICENSE
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]

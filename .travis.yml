@@ -18,3 +18,4 @@ deploy:
   on:
     tags: true
     repo: DataSounds/DataSounds
+  all_branches: true
