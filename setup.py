@@ -9,7 +9,7 @@ NEWS = open(os.path.join(here, 'NEWS.txt')).read()
 version = '1.2.1'
 
 install_requires = [
-    'sebastian',
+#    'sebastian',
     'numpy'
 ]
 

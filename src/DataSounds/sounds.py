@@ -9,10 +9,10 @@ except ImportError:
 
 import numpy as np
 
-from sebastian.lilypond.interp import parse
-from sebastian.midi.write_midi import SMF
-from sebastian.core.transforms import stretch
-from sebastian.core import notes
+from DataSounds.external.sebastian.lilypond.interp import parse
+from DataSounds.external.sebastian.midi.write_midi import SMF
+from DataSounds.external.sebastian.core.transforms import stretch
+from DataSounds.external.sebastian.core import notes
 
 
 def note_classes(arr, scale):
