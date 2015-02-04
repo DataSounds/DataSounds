@@ -7,8 +7,8 @@ try:
 except ImportError:
     from io import StringIO
 
-from sebastian.lilypond.interp import parse
-from sebastian.midi.write_midi import SMF
+from DataSounds.external.sebastian.lilypond.interp import parse
+from DataSounds.external.sebastian.midi.write_midi import SMF
 
 from DataSounds.sounds import build_scale
 
