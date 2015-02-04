@@ -10,7 +10,7 @@ At the command line:
     $ cd DataSounds
     $ python setup.py install
 
-Or using pip
+Or using [pip](https://pypi.python.org/pypi/pip/) (program to easily install python packages), which dinamicaly access the *Python Package Index* [PyPI](https://pypi.python.org/pypi/DataSounds/1.2.0)
 
 .. code-block:: bash
 
