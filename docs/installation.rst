@@ -11,6 +11,7 @@ At the command line:
     $ python setup.py install
 
 Or using pip_ (program to easily install Python packages), which dinamicaly access the *Python Package Index* PyPI_.
+
 .. _pip: https://pypi.python.org/pypi/pip/
 .. _PyPI: https://pypi.python.org/pypi/DataSounds/1.2.0
 
@@ -34,7 +35,7 @@ After install virtualenvwrapper, follow the instructions below:
 
 Dependencies
 ************
-`numpy <http://www.numpy.org/>`_ is a necessary packages to
+`Numpy <http://www.numpy.org/>`_ is a necessary packages to
 use DataSounds_.
 
 
