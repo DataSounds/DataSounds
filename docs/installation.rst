@@ -10,7 +10,9 @@ At the command line:
     $ cd DataSounds
     $ python setup.py install
 
-Or using [pip](https://pypi.python.org/pypi/pip/) (program to easily install python packages), which dinamicaly access the *Python Package Index* [PyPI](https://pypi.python.org/pypi/DataSounds/1.2.0)
+Or using pip_ (program to easily install Python packages), which dinamicaly access the *Python Package Index* PyPI_.
+.. _pip: https://pypi.python.org/pypi/pip/
+.. _PyPI: https://pypi.python.org/pypi/DataSounds/1.2.0
 
 .. code-block:: bash
 
@@ -32,10 +34,14 @@ After install virtualenvwrapper, follow the instructions below:
 
 Dependencies
 ************
-`numpy <http://www.numpy.org/>`_ and `sebastian
-<https://github.com/jtauber/sebastian>`_ are necessary packages to 
-use `DataSounds. <datasouds.org>`_
+`numpy <http://www.numpy.org/>`_ is a necessary packages to
+use DataSounds_.
 
-Both of them can be installed using **pip**. If you use virtualenvwrapper this
-could be done inside your virtual environment and should be already installed if DataSounds was compiled with success.
 
+..
+    and `sebastian <https://github.com/jtauber/sebastian>`_ are
+    Both of them can be installed using **pip**. If you use virtualenvwrapper this
+Numpy can be installed using **pip**. If you use virtualenvwrapper, this
+could be done inside your virtual environment. Normally, **Numpy** is installed as a dependency of DataSounds_ and should work if it was sucessfully compiled.
+
+.. _DataSounds: www.datasounds.org
