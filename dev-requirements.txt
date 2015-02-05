@@ -7,3 +7,4 @@ pytest-cov==1.6
 pylint==1.0.0
 check-manifest==0.22
 bumpversion==0.5.1
+ipdb==0.8
