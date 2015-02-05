@@ -4,7 +4,7 @@ python:
 - '3.3'
 - '3.4'
 install:
-- pip install -r dev-requirements.txt --index-url
+- pip install -r dev-requirements.txt
 - pip install coverage
 - pip install coveralls
 script:
