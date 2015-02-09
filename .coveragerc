@@ -1,0 +1,5 @@
+[run]
+omit = src/Datasounds/external/*
+
+[report]
+omit = src/Datasounds/external/*
