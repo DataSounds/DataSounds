@@ -1,4 +1,5 @@
 #https://github.com/jtauber/sebastian/archive/master.zip
+six==1.9.0
 numpy==1.9.1
 pip==6.0.8
 setuptools==12.0.5

@@ -8,6 +8,7 @@ version = '1.2.4'
 
 install_requires = [
 #    'sebastian',
+    'six',
     'numpy'
 ]
 
