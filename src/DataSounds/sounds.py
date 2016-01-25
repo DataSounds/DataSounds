@@ -8,6 +8,8 @@ except ImportError:
 
 
 import numpy as np
+from sys import platform
+import subprocess
 
 from DataSounds.external.sebastian.lilypond.interp import parse
 from DataSounds.external.sebastian.midi.write_midi import SMF
@@ -270,3 +272,53 @@ def w2Midi(name, BytesIo):
     muz_file = open(str(name)+'.midi', 'w')
     muz_file.write(BytesIo.getvalue())
     muz_file.close()
+
+def play(file):
+    """Use system program to play MIDI files
+    We try here to use timidity as default software. Please, see `timidity
+    documentation<http://timidity.sourceforge.net/install.html>`_.
+
+    Parameters
+    ----------
+    name : str
+        name of file
+    
+    Example
+    -------
+    >>> file = "music.mid"
+    >>> play(file)
+   """
+    # linux
+    if platform == "linux" or platform == "linux2":
+        try:
+            subprocess.call(["totem "+str(file)])
+        except OSError:
+            print("Maybe you do not have 'fluid-soundfont-gm' installed "
+                  "to use it with totem.")
+        try:
+            subprocess.call(["timidity "+str(file)])
+        except OSError:
+            print("You do not have appropriate software installed to "
+                  "play MIDI files. See Timidity instalation "
+                  "http://timidity.sourceforge.net/install.html")
+
+    # MAC OS X
+    elif _platform == "darwin":
+        try:
+            subprocess.call(["open "+str(file)])
+        except OSError:
+            print("Seems that your 'open' program cannot play MIDI files")
+        try:
+            subprocess.call(["timidity "+str(file)])
+        except:
+            print("You do not have appropriate software installed to "
+                  "play MIDI files. See Timidity instalation "
+                  "http://timidity.sourceforge.net/install.html")
+    # Windows
+    elif _platform == "win32":
+        try:
+            subprocess.call(["timidity "+str(file)])
+        except OSError:
+            print("You do not have appropriate software installed to "
+                  "play MIDI files. See Timidity instalation "
+                  "http://timidity.sourceforge.net/install.html")
