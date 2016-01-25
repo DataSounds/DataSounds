@@ -6,9 +6,6 @@ DataSounds
 
 .. image:: https://travis-ci.org/DataSounds/DataSounds.png
         :target: https://travis-ci.org/DataSounds/DataSounds
-        
-.. image:: https://circleci.com/gh/DataSounds/DataSounds.svg?style=svg
-    :target: https://circleci.com/gh/DataSounds/DataSounds
 
 .. image:: https://coveralls.io/repos/DataSounds/DataSounds/badge.png?branch=master
         :target: https://coveralls.io/r/DataSounds/DataSounds?branch=master
