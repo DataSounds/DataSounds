@@ -1,5 +1,0 @@
-machine:
-  python:
-    version: 2.7.5
-    version: 3.3.5
-    version: 3.4.2
