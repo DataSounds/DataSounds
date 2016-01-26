@@ -1,6 +1,9 @@
 DataSounds
 ==========
 
+.. image:: https://zenodo.org/badge/16002/DataSounds/DataSounds.svg
+        :target: https://zenodo.org/badge/latestdoi/16002/DataSounds/DataSounds
+
 .. image:: https://badge.waffle.io/datasounds/datasounds.png
         :target: http://waffle.io/datasounds/datasounds
 
@@ -28,7 +31,7 @@ DataSounds is available on PyPI and can be installed with pip:
 Documentation
 =============
 
-Available at
+Read the docs available at
 
 https://datasounds.readthedocs.org/
 
