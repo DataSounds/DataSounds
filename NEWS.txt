@@ -6,10 +6,29 @@
 News
 ====
 
+1.2.5
+-----
+
+*Release date: 26-Jan-2016
+
+*Some performance on mudules
+
+1.2.4
+-----
+
+*Release date: 4-Feb-2015
+
+*External lib sebastian included
+
+*Tests and some beta features
+
+
 1.2.0
+-----
+
 *Release date: 22-Dec-2013*
 
-* Tests ans some beta features
+*Tests ans some beta features
 
 
 1.1.0
