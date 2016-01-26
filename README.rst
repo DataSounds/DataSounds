@@ -9,7 +9,7 @@ DataSounds
 
 .. image:: https://coveralls.io/repos/DataSounds/DataSounds/badge.png?branch=master
         :target: https://coveralls.io/r/DataSounds/DataSounds?branch=master
-        
+
 .. image:: https://requires.io/github/DataSounds/DataSounds/requirements.svg?branch=master
      :target: https://requires.io/github/DataSounds/DataSounds/requirements/?branch=master
      :alt: Requirements Status
