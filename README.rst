@@ -1,7 +1,7 @@
 DataSounds
 ==========
 .. image:: https://avatars1.githubusercontent.com/u/4330863?v=3&s=200
-        :target: https://avatars1.githubusercontent.com/u/4330863?v=3&s=200
+        :target: http://www.datasounds.org
         :alt: datasounds.org
         :align: left
         :width: 20%
