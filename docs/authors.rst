@@ -2,10 +2,11 @@
 Credits
 =======
 
-Development Lead
+DataSounds development Lead
 ----------------
 
-* DataSounds <arnaldo@datasounds.org, luiz@datasounds.org>
+* Arnaldo Russo <arnaldo@datasounds.org>
+* Luiz Irber <luiz@datasounds.org>
 
 Contributors
 ------------
