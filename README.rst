@@ -6,6 +6,7 @@ DataSounds
         :align: left
         :width: 20%
 
+==========
 
 .. image:: https://zenodo.org/badge/16002/DataSounds/DataSounds.svg
         :target: https://zenodo.org/badge/latestdoi/16002/DataSounds/DataSounds
@@ -25,6 +26,7 @@ DataSounds
 
 
 Get sounds from temporal series, or another sequential data.
+
 Check www.datasounds.org for more information.
 
 Installation
