@@ -6,11 +6,9 @@ try:
 except ImportError:
     from StringIO import StringIO as BytesIO
 
-
 import numpy as np
 from sys import platform
 import subprocess
-
 from DataSounds.external.sebastian.lilypond.interp import parse
 from DataSounds.external.sebastian.midi.write_midi import SMF
 from DataSounds.external.sebastian.core.transforms import stretch
@@ -132,7 +130,8 @@ def build_scale(key, mode='major', octaves=1):
 
 def note_name(number, scale):
     '''
-    Transform a number to a note string, including np.nan as musical rests.
+    Transform a number to a note string, including np.nan as
+    musical rests.
     '''
     if np.isnan(number):
         return "r"
@@ -184,7 +183,7 @@ def get_music(series, key='C', mode='major', octaves=2,
     key : Musical key.
         Can be setted as a parameter while building scale.
         Key should be written as "C", for C and "C#" for C sharp and
-        "Cb" for C flat.
+        "Cb" for C flat, or any other key note (e.g. D, E, F, G, A, B).
 
     mode : Music mode.
         'major', 'minor' and 'pentatonic' are accetable parameters.
@@ -197,8 +196,8 @@ def get_music(series, key='C', mode='major', octaves=2,
     instruments : list of MIDI instruments.
         General MIDI Level 1 Instrument Patch Map can be found at:
         http://en.wikipedia.org/wiki/General_MIDI
-        Acoustic Grand Piano is the default usage value '[0]' if any instruments
-        are declared.
+        Acoustic Grand Piano is the default usage value '[0]' if any
+        instruments are declared.
         Fewer examples:
         [0] Acoustic Grand Piano
         [18] Rock Organ
@@ -217,8 +216,10 @@ def get_music(series, key='C', mode='major', octaves=2,
     Example
     -------
     >>> data = np.random.random(10).reshape(2,5)
-    array([[ 0.13536875,  0.42212475,  0.26360219,  0.30153336,  0.62150923],
-       [ 0.49384405,  0.32503762,  0.85549822,  0.80212442,  0.70702405]])
+    array([[ 0.13536875,  0.42212475,  0.26360219,  0.30153336,
+            0.62150923],
+            [ 0.49384405,  0.32503762,  0.85549822,  0.80212442,
+            0.70702405]])
 
     >>> get_music(data, octaves=2, instruments=(0,23))
     <io.BytesIO at 0x7f98201c9d40>
