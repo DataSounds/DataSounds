@@ -197,7 +197,7 @@ def get_music(series, key='C', mode='major', octaves=2,
     instruments : list of MIDI instruments.
         General MIDI Level 1 Instrument Patch Map can be found at:
         http://en.wikipedia.org/wiki/General_MIDI
-        Gran Piano is the default usage value '[0]' if any instruments
+        Acoustic Grand Piano is the default usage value '[0]' if any instruments
         are declared.
         Fewer examples:
         [0] Acoustic Grand Piano
