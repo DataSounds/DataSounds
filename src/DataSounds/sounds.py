@@ -95,7 +95,7 @@ def blues_scale(tonic):
 
 def build_scale(key, mode='major', octaves=1):
     '''
-    Build a scale from a refference note.
+    Build a scale from a key note.
 
     Parameters
     ----------
