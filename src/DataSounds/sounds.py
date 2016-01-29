@@ -189,7 +189,9 @@ def get_music(series, key='C', mode='major', octaves=2,
         'major', 'minor' and 'pentatonic' are accetable parameters.
         More options of modes on `build_scale`.
 
-    octaves : Number of available scales for musical construction.
+    octaves : Number of octaves, or list of octaves (just in case you
+        will use more than one series and want to change their specific
+        number of octaves).
         As higher are the octaves higher pitch differeneces will occur
         while representing your data.
 
@@ -421,9 +423,10 @@ def get_music(series, key='C', mode='major', octaves=2,
     midi_out = BytesIO()
 
     series = np.array(series)
-    scale = build_scale(key, mode, octaves)
+    scales = []
     melodies = []
     if len(series.shape) == 1:
+        scale = build_scale(key, mode, octaves)
         if all(np.isnan(series)):
             melody = []
             melodies.append(melody)
@@ -437,8 +440,13 @@ def get_music(series, key='C', mode='major', octaves=2,
                 melody = []
                 melodies.append(melody)
             else:
-                snotes = note_number(series[i], scale)
-                melody = parse(' '.join([note_name(x, scale) for x in snotes]))
+                if isinstance(octaves, int):
+                    scales.append(build_scale(key, mode, octaves))
+                else:
+                    scales.append(build_scale(key, mode, octaves[i]))
+
+                snotes = note_number(series[i], scales[i])
+                melody = parse(' '.join([note_name(x, scales[i]) for x in snotes]))
                 melodies.append(melody)
 
             # chords = chord_scaled(series, scale, period)
