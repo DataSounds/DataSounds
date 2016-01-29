@@ -463,7 +463,7 @@ def w2Midi(name, BytesIo):
     BytesIo : get_music output variable
         varible of music generated with `get_music`
     '''
-    muz_file = open(str(name)+'.midi', 'w')
+    muz_file = open(str(name)+'.midi', 'wb')
     muz_file.write(BytesIo.getvalue())
     muz_file.close()
 
