@@ -463,7 +463,7 @@ def w2Midi(name, BytesIo):
     BytesIo : get_music output variable
         varible of music generated with `get_music`
     '''
-    muz_file = open(str(name)+'.midi', 'w')
+    muz_file = open(str(name)+'.midi', 'wb')
     muz_file.write(BytesIo.getvalue())
     muz_file.close()
 
@@ -484,34 +484,38 @@ def play(file):
    """
     # linux
     if platform == "linux" or platform == "linux2":
-        try:
-            subprocess.call(["totem "+str(file)])
-        except OSError:
-            print("Maybe you do not have 'fluid-soundfont-gm' installed "
-                  "to use it with totem.")
-        try:
-            subprocess.call(["timidity "+str(file)])
-        except OSError:
-            print("You do not have appropriate software installed to "
-                  "play MIDI files. See Timidity instalation "
-                  "http://timidity.sourceforge.net/install.html")
+        if subprocess.call("timidity") == 0:
+            try:
+                subprocess.call(["timidity", str(file)])
+            except OSError:
+                print("You do not have appropriate software installed to "
+                    "play MIDI files. See Timidity instalation "
+                    "http://timidity.sourceforge.net/install.html")
+
+        else:
+            try: subprocess.call(["totem", str(file)])
+            except OSError:
+                print("Maybe you do not have 'fluid-soundfont-gm' installed "
+                    "to use it with totem.")
 
     # MAC OS X
     elif _platform == "darwin":
-        try:
-            subprocess.call(["open "+str(file)])
-        except OSError:
-            print("Seems that your 'open' program cannot play MIDI files")
-        try:
-            subprocess.call(["timidity "+str(file)])
-        except:
-            print("You do not have appropriate software installed to "
-                  "play MIDI files. See Timidity instalation "
-                  "http://timidity.sourceforge.net/install.html")
+        if subprocess.call("timidity") == 0:
+            try:
+                subprocess.call(["timidity", str(file)])
+            except:
+                print("You do not have appropriate software installed to "
+                    "play MIDI files. See Timidity instalation "
+                    "http://timidity.sourceforge.net/install.html")
+        else:
+            try:
+                subprocess.call(["open", str(file)])
+            except OSError:
+                print("Seems that your 'open' program cannot play MIDI files")
     # Windows
     elif _platform == "win32":
         try:
-            subprocess.call(["timidity "+str(file)])
+            subprocess.call(["timidity", str(file)])
         except OSError:
             print("You do not have appropriate software installed to "
                   "play MIDI files. See Timidity instalation "
