@@ -28,7 +28,7 @@ def note_classes(arr, scale):
 
     Returns
     -------
-    Parametreized values of musical notes based on input array.
+    Parameterized values of musical notes based on input array.
     '''
     minr = np.nanmin(arr)
     maxr = np.nanmax(arr)
@@ -38,7 +38,7 @@ def note_classes(arr, scale):
 
 def note_number(arr, scale):
     '''
-    Get a relative number of notes, included in a choiced scale.
+    Get a relative number of notes, included in a chosen scale.
 
     Parameters
     ----------
@@ -49,7 +49,7 @@ def note_number(arr, scale):
     Returns
     -------
     mapping : arr
-        Note number of input array parameterized with choiced scale.
+        Note number of input array parameterized with chosen scale.
         Note number follows the Sebastian sequence, and it can be
         visualized for any number with:
         sebastian.core.notes.name('2') will return musical note "E".
@@ -102,8 +102,8 @@ def build_scale(key, mode='major', octaves=1):
         Key should be written as "C", for C and "C#" for C sharp and
         "Cb" for C flat.
 
-    mode : Musica mode.
-        'major' and 'minor' and 'pentatonic' are accetable parameters.
+    mode : Musical mode.
+        'major' and 'minor' and 'pentatonic' are acceptable parameters.
 
     octaves : int
         number of octaves to be evaluated.
@@ -186,13 +186,13 @@ def get_music(series, key='C', mode='major', octaves=2,
         "Cb" for C flat, or any other key note (e.g. D, E, F, G, A, B).
 
     mode : Music mode.
-        'major', 'minor' and 'pentatonic' are accetable parameters.
+        'major', 'minor' and 'pentatonic' are acceptable parameters.
         More options of modes on `build_scale`.
 
     octaves : Number of octaves, or list of octaves (just in case you
         will use more than one series and want to change their specific
         number of octaves).
-        As higher are the octaves higher pitch differeneces will occur
+        As higher are the octaves higher pitch differences will occur
         while representing your data.
 
     instruments : list of MIDI instruments.
@@ -469,7 +469,7 @@ def w2Midi(name, BytesIo):
     name : str
         name of file
     BytesIo : get_music output variable
-        varible of music generated with `get_music`
+        variable of music generated with `get_music`
     '''
     muz_file = open(str(name)+'.midi', 'wb')
     muz_file.write(BytesIo.getvalue())
@@ -497,7 +497,7 @@ def play(file):
                 subprocess.call(["timidity", str(file)])
             except OSError:
                 print("You do not have appropriate software installed to "
-                    "play MIDI files. See Timidity instalation "
+                    "play MIDI files. See Timidity installation "
                     "http://timidity.sourceforge.net/install.html")
 
         else:
@@ -513,7 +513,7 @@ def play(file):
                 subprocess.call(["timidity", str(file)])
             except:
                 print("You do not have appropriate software installed to "
-                    "play MIDI files. See Timidity instalation "
+                    "play MIDI files. See Timidity installation "
                     "http://timidity.sourceforge.net/install.html")
         else:
             try:
@@ -526,5 +526,5 @@ def play(file):
             subprocess.call(["timidity", str(file)])
         except OSError:
             print("You do not have appropriate software installed to "
-                  "play MIDI files. See Timidity instalation "
+                  "play MIDI files. See Timidity installation "
                   "http://timidity.sourceforge.net/install.html")
