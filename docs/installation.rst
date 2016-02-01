@@ -43,6 +43,6 @@ use DataSounds_.
     and `sebastian <https://github.com/jtauber/sebastian>`_ are
     Both of them can be installed using **pip**. If you use virtualenvwrapper this
 Numpy can be installed using **pip**. If you use virtualenvwrapper, this
-could be done inside your virtual environment. Normally, **Numpy** is installed as a dependency of DataSounds_ and should work if it was sucessfully compiled.
+could be done inside your virtual environment. Normally, **Numpy** is installed as a dependency of DataSounds_ and should work if it was successfully compiled.
 
 .. _DataSounds: www.datasounds.org
