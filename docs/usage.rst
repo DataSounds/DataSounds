@@ -20,7 +20,9 @@ Simple Python script to use DataSounds module to sonify dataset.
 
 Play *MIDI* files inside Python is a little bit tricky, and it is possible using the compilation of Pygame library.
 
-To not bring this dependency inside DataSounds, we try to use the system player. For Linux you could install `timidity <http://timidity.sourceforge.net/install.html>`_ (apt-get install timidity) or use *totem* with *fluid-soundfont-gm*. For OS X users, we try to use the simple *open* or *timidity*, and for windows users you should install *timidity*.
+To not bring this dependency inside DataSounds, we try to use the system player. For Linux you could install timidity_ (apt-get install timidity) or use *totem* with *fluid-soundfont-gm*. For OS X users, we try to use the simple *open* or *timidity*, and for windows users you should install *timidity*.
+
+.. _timidity: http://timidity.sourceforge.net/install.html
 
 DataSounds comes with default pre settings of `get_music` function, which may be changed accordingly the user prefferences. The help function displays:
 
