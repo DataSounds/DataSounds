@@ -1,6 +1,6 @@
 #https://github.com/jtauber/sebastian/archive/master.zip
 six==1.12.0
-numpy==1.16.0
+numpy==1.16.1
 pip==19.0.1
 setuptools==40.7.1
 wheel==0.32.3
