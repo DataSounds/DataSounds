@@ -1,2 +1,2 @@
 #https://github.com/jtauber/sebastian/archive/master.zip
-numpy==1.16.0
+numpy==1.16.1
